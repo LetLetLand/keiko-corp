@@ -334,12 +334,11 @@
 	<script type="text/javascript">
 		/* Defer CSS Files */
 		const cssFiles = ['bootstrap.css', 'owl.transitions.css', 'owl.carousel.css', 'animate.css']
-		cssFiles.forEach(function (item, index) {
-			// body
+		cssFiles.forEach(item => {
 			const cssDefer = document.createElement('link');
 			cssDefer.rel = 'stylesheet';
-			cssDefer.href = `./css/${item}`;
 			cssDefer.type = 'text/css';
+			cssDefer.href = `./css/${item}`;
 			const godefer = document.getElementsByTagName('head')[0];
 			godefer.appendChild(cssDefer)
 		});
