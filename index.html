@@ -8,10 +8,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="css/owl.transitions.css" />
-	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
-	<link rel="stylesheet" type="text/css" href="css/animate.css" />
+
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 
 
@@ -320,8 +317,50 @@
 			<strong>Pixelhint</strong>
 	</footer>
 	<!--  End Footer Section  -->
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/ajaxchimp.js"></script>
+
+	<!-- <noscript id="deferred-styles">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/owl.transitions.css" />
+		<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css" />
+	</noscript> -->
+
+
+
+	<script type="text/javascript" src="js/jquery.js" defer></script>
+	<script type="text/javascript" src="js/ajaxchimp.js" defer></script>
+
+
+	<script type="text/javascript">
+		/* Defer CSS Files */
+		const cssFiles = ['bootstrap.css', 'owl.transitions.css', 'owl.carousel.css', 'animate.css']
+		cssFiles.forEach(function (item, index) {
+			// body
+			const cssDefer = document.createElement('link');
+			cssDefer.rel = 'stylesheet';
+			cssDefer.href = `./css/${item}`;
+			cssDefer.type = 'text/css';
+			const godefer = document.getElementsByTagName('head')[0];
+			godefer.appendChild(cssDefer)
+		});
+	</script>
+
+
+	<!-- <script>
+		var loadDeferredStyles = function () {
+			var addStylesNode = document.getElementById("deferred-styles");
+			var replacement = document.createElement("div");
+			replacement.innerHTML = addStylesNode.textContent;
+			document.body.appendChild(replacement)
+			addStylesNode.parentElement.removeChild(addStylesNode);
+		};
+		var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+			window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+		if (raf) raf(function () {
+			window.setTimeout(loadDeferredStyles, 0);
+		});
+		else window.addEventListener('load', loadDeferredStyles);
+	</script> -->
 
 	<script type="text/javascript" src="js/owl.carousel.min.js" defer></script>
 	<script type="text/javascript" src="js/wow.js" defer></script>
